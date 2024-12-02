@@ -17,8 +17,8 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 sh '''
-                mkdir -p /tmp/python-app-deploy
-                cp ${WORKSPACE}/app.py /tmp/python-app-deploy/
+                mkdir -p ${WORKSPACE}/python-app-deploy
+                cp ${WORKSPACE}/app.py ${WORKSPACE}/python-app-deploy/
                 '''
             }
         }
