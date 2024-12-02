@@ -6,6 +6,8 @@ pipeline {
             steps {
                 echo 'Creating virtual environment and installing dependencies...'
                 sh '''
+                apt update && apt install -y python3.11-venv
+                python3 -m ensurepip
                 python3 -m venv venv    # Create a virtual environment
                 source venv/bin/activate # Activate the virtual environment
                 pip install -r requirements.txt  # Install dependencies
