@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'python -m unittest discover -s .'
+                sh 'python3 -m unittest discover -s .'
             }
         }
         stage('Deploy') {
@@ -25,7 +25,7 @@ pipeline {
                 echo 'Deploying application...'
                 sh '''
                 mkdir -p /tmp/python-app-deploy
-                cp app.py /tmp/python-app-deploy/
+                cp ${WORKSPACE}/app.py /tmp/python-app-deploy/
                 '''
             }
         }
